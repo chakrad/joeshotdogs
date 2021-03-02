@@ -24,6 +24,8 @@
 
 <body>
 
+<h1>Your Order from Joe's Hotdogs</h1>
+
 <div class = "row" >
 <div class = "column">
 	<script language = "javascript">
@@ -60,6 +62,7 @@
 	document.write("<br>The tax on the order is $" + tax);
 	
 	total = (subtotal-discount) + tax;
+	total = Math.round(total * 100) / 100;
 	document.write("<br>The total is $" + total);
 	
 	
@@ -67,5 +70,9 @@
 	
 </div>
 </div>
+
+<br>
+<h2>Thanks for Shopping!</h2>
+
 </body>
 </html>
