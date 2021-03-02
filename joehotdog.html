@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Joe's Hotdog Stand</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+
+<body>
+
+<div class = "row" >
+<div class = "column">
+	<script language = "javascript">
+	numDogs = parseFloat(prompt("Hi! How many hotdogs would you like?",""));
+	numFries = parseFloat(prompt("And how many fries would you like?",""));
+	numSodas = parseFloat(prompt("Lastly, how many drinks would you like?",""));
+	
+	document.write("Quantities: <br>");
+	if(numDogs > 0)
+		document.write(numDogs + " hot dogs<br>");
+	if(numFries > 0)
+		document.write(numFries + " fries<br>");
+	if(numSodas > 0)
+		document.write(numSodas + " sodas<br>");
+	
+	</script>
+	</div>
+	<div class = "column">
+	<script language = "javascript">
+	
+	subtotal = 3.25*numDogs + 2.00*numFries + 1.50*numSodas;
+	document.write("Subtotal is $" + subtotal);
+	
+	discount = 0;
+	if(subtotal >= 20)
+	{
+		discount = subtotal * 0.1;
+		discount = Math.round(discount * 100) / 100;
+		document.write("<br>Order qualifed for discount of $" + discount);
+	}
+	
+	tax = (subtotal-discount) * 0.0625;
+	tax = Math.round(tax * 100) / 100;
+	document.write("<br>The tax on the order is $" + tax);
+	
+	total = (subtotal-discount) + tax;
+	document.write("<br>The total is $" + total);
+	
+	
+	</script>
+	
+</div>
+</div>
+</body>
+</html>
